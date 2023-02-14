@@ -1,9 +1,9 @@
 import React from 'react';
-import UltimateHolidayList from './UltimateHolidayList';
+import Counter from './Counter';
  
 const App = () => (
     <main>
-        <UltimateHolidayList />
+        <Counter />
     </main>
 );
 
