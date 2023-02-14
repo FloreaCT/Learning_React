@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rendering</title>
+        <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js">
+        </script>
+        <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js">
+        </script>
+        <script src="https://unpkg.com/@babel/standalone@7.9.4/babel.min.js"></script>
+    </head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // const someText = 'I am some interpolated text';
+
+        // const savedClassName = 'ice-cream-decoration'
+
+        // const paragraph = <p className={savedClassName}>{someText}</p>
+
+        // const getFormattedText = string => `The count is ${string}`
+
+        // let count = 0;
+
+        // const interval = setInterval(() => {
+
+        //     const paragraph = <p>{getFormattedText(count)}</p>
+        //     ReactDOM.render(paragraph, document.getElementById('root'))
+
+        //     if(count === 1000){
+        //         clearInterval(interval)
+        //     } else {
+        //         count++;
+        //     }
+        // }, 30)
+      
+        // const paragraph = <p></p>
+
+            const isError = false;
+
+            const errorContainer = <div className={isError ? 'error' : 'standard'}>
+            {
+                isError ? (
+                <p>Panic! Something went wrong!</p>)
+                :
+                (<p>Stop panicking!</p>)
+            }    
+                
+            </div>
+
+        ReactDOM.render(errorContainer, document.getElementById('root'))
+    </script>
+</body>
+</html>

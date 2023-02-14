@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering</title>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js">
+    </script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js">
+    </script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.4/babel.min.js"></script>
+</head>
+
+<body>
+    <input aria-label="This is a test input" maxlength ="10" readonly class="input-style">
+    <div id="root"></div>
+
+    <!--  USING JAVASCRIPT  -->
+    <!-- <script type="text/javascript">
+        const button = React.createElement('button', {
+            type: 'button'
+        }, 'Save')
+        ReactDOM.render(button, document.getElementById('root'))
+
+        const articleHeading = React.createElement('h2', null, 'My first blog post')
+
+        const paragraph = React.createElement('p', {
+            className: 'text'
+        }, 'This is the content of my post')
+
+        const article = React.createElement('article', null, articleHeading, paragraph)
+
+        const mainHeading = React.createElement('h1', null, 'My Blog')
+
+        const main = React.createElement('main', {
+            id: 'main'
+        }, mainHeading, article)
+
+   
+
+        ReactDOM.render(main, document.getElementById('root'))
+    </script> -->
+
+    <!-- USING JSX / BABEL-->
+    <script type="text/babel">
+        // const main = (
+        //     <React.Fragment>
+        // <main id='main'>
+        //     <h1>My blog</h1>
+        //     <article>
+        //         <h2>My first blog post</h2>
+        //         <p className="text">This is the content of my post</p>
+        //     </article>
+        // </main>
+        // <footer>
+        //     <span>Some footer text
+        //     </span>
+        //     </footer>n
+        //     </React.Fragment>
+        // );
+    const input =(
+        <React.Fragment>
+            <label htmlFor="jsxInput">This is a test Input</label>
+        <input aria-label="This is a test input" id="jsxInput" maxLength="10" readOnly className="input-style"/>
+        </React.Fragment>
+        );
+        ReactDOM.render(input, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning components</title>
+        <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js">
+        </script>
+        <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js">
+        </script>
+        <script src="https://unpkg.com/@babel/standalone@7.9.4/babel.min.js"></script>
+    </head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    // const order = (cart, item)=>{
+    //     cart.push(item)
+    // }
+
+    // const myCart = []
+
+    // order(myCart, 'Video')
+    
+    // const paragraph = <p>{JSON.stringify(myCart)}</p>;
+
+    const getText = name => `My name is ${name}`;
+
+    const calculate = (x, y) => x * y;
+
+    const getSetAction = name => ( {type: 'SET_NAME', name});
+
+    // By convention, user defined are Capitalized
+    // const Paragraph = ( {text, name} ) => <p>{text} {name}</p>;
+
+    // Returning a JSX view using the JSX syntax / Creating a COMPONENT
+    // const container = <div><Paragraph text="Cristian" name="whatsapp"/></div>
+
+    const ErrorBlock = ({error}) => 
+    error.hasError ? (<p>{error.message}</p>)
+    :
+    (<p>Everything is just fine</p>)
+
+    const error = {
+        hasError: true,
+        message: 'I have an error... sad!',
+    }
+
+    const container = (<div><ErrorBlock error={error}/></div>)
+
+    /* Components */ 
+
+    const Paragraph = ({text}) => <p>{text}</p>
+
+    const Section = ({headingText, children}) => 
+    <section>
+        <h1>{headingText}
+            </h1>
+            {children}
+        </section>
+    
+        const SectionBlock = () => 
+        <Section 
+        headingText="My first components">
+        <Paragraph text="My first blog text"/>
+        </Section>
+
+    ReactDOM.render(<SectionBlock/>, document.getElementById('root'))
+
+    </script>
+</body>
+</html>
