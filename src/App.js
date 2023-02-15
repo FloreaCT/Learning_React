@@ -1,12 +1,11 @@
 import React from 'react';
-import Counter from './Counter';
+import UltimateStopwatch from './UltimateStopwatch.js';
  
 const App = () => {
     return (
         
         <main>
-            <h1>Ultimate Counter</h1>
-            <Counter />
+            <UltimateStopwatch />
         </main>
     );
 }

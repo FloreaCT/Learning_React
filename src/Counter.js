@@ -18,7 +18,12 @@ const Counter = () => {
     }, [counter])
 
     useEffect(()=>{
-        subscribe(counter)
+        if(counter === 0){
+           return undefined;
+        } else {
+
+            subscribe(counter)
+        }
 
         return () => {
             unsubscribe(counter)
