@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form.js';
+import Container from './Container.js';
  
 const App = () => {
+
     return (
-        
-        <main>
-            <Form />
-        </main>
+
+            <Container />
+
     );
 }
 
