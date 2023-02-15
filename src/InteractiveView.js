@@ -5,6 +5,7 @@ const InteractiveView = ({value, onAction, actionText}) => (
     <Fragment>
         <p>{value}</p>
         <button type="button" onClick={onAction}>{actionText}</button>
+        <button type="button" onClick={onAction}>{actionText}</button>
     </Fragment>
 )
 
