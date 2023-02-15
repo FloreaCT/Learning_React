@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import './css/form.css'
 
 const initialState = {
@@ -13,12 +13,49 @@ const initialState = {
     shirtSize: ''
 }
 
-const Form = () => {
+const loadedState = {
+    firstName: 'Florea',
+    lastName: 'Cristian',
+    biography: 'I am the best and will become amazing!!',
+    transport: 'cars',
+    agree: true,
+    breakfast: true,
+    lunch: true,
+    dinner: true,
+    shirtSize: 'l'
+}
 
-    const [formState, setFormState] = useState({
-        firstName: '',
-        lastName: ''
-    })
+const FormContainer = () => {
+
+    const [data, setData] = useState(initialState)
+    
+    const onSubmitHandler = formState => {
+        console.log(formState);
+    }
+
+         
+    const onClickLoaderHandler = () => {
+        setData(loadedState)
+    }
+
+    const onClickHandler = () => {
+        setData(initialState)
+    }
+
+    return <Fragment><Form onSubmit={onSubmitHandler} data={data}></Form>
+      <button type="button" onClick={onClickLoaderHandler}>Load values</button>
+      <br></br>
+      <button type="button" onClick={onClickHandler}>Clear Values</button>
+      </Fragment>
+}
+
+const Form = ({onSubmit, data}) => {
+
+    const [formState, setFormState] = useState(initialState)
+
+    useEffect(() => {
+        setFormState(data)
+    }, [data])
 
     const onChangeHandler = (e) => {
         const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -28,16 +65,12 @@ const Form = () => {
         })
 
     }
-    
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-        console.log(formState);
 
-     }
-
-    const onClickHandler = () => {
-        setFormState(initialState)
+    const onSubmitHandler = e => {
+        e.preventDefault()
+        onSubmit(formState)
     }
+
 
     return (
     <form onSubmit={onSubmitHandler}>
@@ -129,9 +162,10 @@ const Form = () => {
         </fieldset>
 
         <button type="submit">Save</button>
-        <button type="button" onClick={onClickHandler}>Clear Values</button>
+
+
     </form>
     )
 }
 
-export default Form;
+export default FormContainer;
