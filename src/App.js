@@ -1,13 +1,8 @@
-import React from 'react';
-import Container from './Container.js';
- 
+import React from "react";
+import Container from "./Container.js";
+
 const App = () => {
-
-    return (
-
-            <Container />
-
-    );
-}
+  return <Container />;
+};
 
 export default App;
